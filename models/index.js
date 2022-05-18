@@ -1,4 +1,4 @@
-const Thought = require('./')
+const Thought = require('./Thought')
 const User = require('./User')
 
 

@@ -1,14 +1,15 @@
-const moment = require('moment');
+const moment = require('momment');
 const { Schema, Types } = require('mongoose');
 
 const reactSchema = new Schema({
   reactionId: { 
-    default: new Types.objectId(),
-      type: Types.objectId,
+    type: Types.ObjectId,
+    default: () => new Types.ObjectId()
+      
   },
     reactionBody: { 
       type: String,
-        maxLength: 300,
+        maxLength: 280,
           required: true,
     },
     createdAt: { 
