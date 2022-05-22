@@ -4,7 +4,6 @@ const { User } = require('../models');
 // const { 
 //   getAllUsers, 
 //     addFriend,
-//       removeFriend,
 //         getUserById,
 //           deleteUser,
 //           updateUser,
@@ -12,7 +11,9 @@ const { User } = require('../models');
 // } = require('../../controllers/user-controller');
 
 getAllUsers = (req, res)  => User.find().then(data=>res.json(data));
+
 createUser = (req,res) => User.create(req.body).then(data=>res.json(data));
+
 addFriend = (req, res) => {
   let personId = req.params.userId; 
     let friendId = req.params.friendId;
@@ -20,7 +21,11 @@ addFriend = (req, res) => {
     .then(data=>res.json(data))
 }
 
+deleteFriend = (req, res) => {
+  let friendId = req.params.userId;
+  User.findByIdAndRemove({ _id: friendId }).then(data=>res.json(data));
+    // User.updateMany({_id: {$in: dbUserData.friends}}, {$pull: { friends: params.id}}).then(data=>res.json(data));
+}
 
 
-
-module.exports = { getAllUsers, createUser, addFriend, removeFriend };
+module.exports = { getAllUsers, createUser, addFriend, deleteFriend };
