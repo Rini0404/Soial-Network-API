@@ -1,14 +1,4 @@
-const { User } = require('../models');
-
-
-// const { 
-//   getAllUsers, 
-//     addFriend,
-//         getUserById,
-//           deleteUser,
-//           updateUser,
-//             createUser,
-// } = require('../../controllers/user-controller');
+const { User, Thought } = require('../models');
 
 getAllUsers = (req, res)  => User.find().then(data=>res.json(data));
 
@@ -23,9 +13,30 @@ addFriend = (req, res) => {
 
 deleteFriend = (req, res) => {
   let friendId = req.params.userId;
-  User.findByIdAndRemove({ _id: friendId }).then(data=>res.json(data));
-    // User.updateMany({_id: {$in: dbUserData.friends}}, {$pull: { friends: params.id}}).then(data=>res.json(data));
+  User.findByIdAndRemove({ _id: friendId }, 
+    {$pull: { friends: params.friendId }}, 
+    {new: true, 
+  runValidators: true 
+}).then(data=>res.json(data));
 }
 
+// good
+getUserById = (req, res) => {
+  User.findOne({_id: req.params.id}).populate([{path: 'thoughts', select: '-__v'}, {path: 'friends', select: '-__v'}])
+  .select('-__v')
+  .then(dbUserData => res.json(dbUserData)).catch(err => {
+    console.log(err);
+      res.status(500).json(err);
+  })
+}
 
-module.exports = { getAllUsers, createUser, addFriend, deleteFriend };
+deleteUser = ({params}, res) => {
+  User.findOneAndDelete({_id: params.id})
+  .then(dbUserData => res.json(dbUserData));
+}
+
+updateUser = (req, {body}, res) => {
+  User.findOneAndUpdate( body, {id: req.params.id}, {new: true, runValidators: true}).then(data => res.json(data)); 
+}
+
+module.exports = { getAllUsers, createUser, addFriend, deleteFriend, getUserById, deleteUser, updateUser };
