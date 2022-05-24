@@ -20,6 +20,10 @@
 > Your Challenge is to build an API for a social network web application where users can share their thoughts, react to friends’ thoughts, and create a friend list. You’ll use Express.js for routing, a MongoDB database, and the Mongoose ODM. In addition to using the Express.js and Mongoose packages, you may also optionally use a JavaScript date library of your choice or the native JavaScript Date object to format timestamps.
 
 ### 🏠 [Homepage](https://github.com/Rini0404/Soial-Network-API)
+![cap3](https://user-images.githubusercontent.com/95727555/169942142-853a3fa5-f9a0-4d5a-a377-0b75963a682f.PNG)
+![Capture](https://user-images.githubusercontent.com/95727555/169942144-86cc2d93-072c-44a7-92e1-db9ddc02c7c6.PNG)
+![cap2](https://user-images.githubusercontent.com/95727555/169942145-da0552d7-4cd3-43ec-b5da-12d1a27e039d.PNG)
+
 
 ### ✨ [Demo]( https://drive.google.com/file/d/1yoryhh-8XBzC5DCuu4I_hFvjnJVNoAck/view)
 
@@ -55,22 +59,7 @@ npm run test
 * Github: [@Rini0404](https://github.com/Rini0404)
 * LinkedIn: [@https:\/\/www.linkedin.com\/in\/rene-ortega-a29564196\/](https://linkedin.com/in/https:\/\/www.linkedin.com\/in\/rene-ortega-a29564196\/)
 
-## 🤝 Contributing
-
-Contributions, issues and feature requests are welcome!<br />Feel free to check [issues page](N/A). You can also take a look at the [contributing guide](https://github.com/kefranabg/readme-md-generator/blob/master/CONTRIBUTING.md).
-
-## Show your support
-
-Give a ⭐️ if this project helped you!
-
-<a href="https://www.patreon.com/N\/A">
-  <img src="https://c5.patreon.com/external/logo/become_a_patron_button@2x.png" width="160">
-</a>
-
 ## 📝 License
 
 Copyright © 2022 [Rene Ortega](https://github.com/Rini0404).<br />
 This project is [MIT](https://github.com/kefranabg/readme-md-generator/blob/master/LICENSE) licensed.
-
-***
-_This README was generated with ❤️ by [readme-md-generator](https://github.com/kefranabg/readme-md-generator)_
