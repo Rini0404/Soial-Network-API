@@ -18,6 +18,7 @@ deleteFriend = (req, res) => {
     {new: true, 
   runValidators: true 
 }).then(data=>res.json(data));
+
 }
 
 // good
@@ -32,7 +33,7 @@ getUserById = (req, res) => {
 
 deleteUser = ({params}, res) => {
   User.findOneAndDelete({_id: params.id})
-  .then(dbUserData => res.json(dbUserData));
+  .then(dbUserData => res.json(dbUserData))
 }
 
 updateUser = (req, {body}, res) => {

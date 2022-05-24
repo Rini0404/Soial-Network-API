@@ -18,7 +18,7 @@ const thoughtSchema = new Schema({
       createdAt: {
         type: Date,
           default: Date.now,
-            get: (createdValue) => moment(createdValue).format('YYYY-MM-DD')
+            // get: (createdValue) => moment(createdValue).format('YYYY-MM-DD')
         },
         reactions: [reactSchema]
   },{
